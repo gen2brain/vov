@@ -9,7 +9,7 @@ model {
             applicationId = 'com.github.gen2brain.vov'
                 minSdkVersion.apiLevel = 11
                 targetSdkVersion.apiLevel = 23
-                versionCode 10
+                versionCode 30
                 versionName "1.0"
                 setProperty("archivesBaseName", "vov-$versionName")
         }

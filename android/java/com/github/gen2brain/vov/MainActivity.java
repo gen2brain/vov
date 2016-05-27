@@ -11,12 +11,12 @@ public class MainActivity extends SDLActivity {
     @Override
     protected String[] getLibraries() {
         return new String[] {
-            "SDL2",
-            "SDL2_image",
-            "SDL2_mixer",
-            "SDL2_ttf",
-            "vov",
-            "main"
+            "libSDL2.so",
+            "libSDL2_image.so",
+            "libSDL2_mixer.so",
+            "libSDL2_ttf.so",
+            "libvov.so",
+            "libmain.so"
         };
     }
 

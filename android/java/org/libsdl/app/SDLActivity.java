@@ -1,5 +1,6 @@
 package org.libsdl.app;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -83,7 +84,8 @@ public class SDLActivity extends Activity {
     // Load the .so
     public void loadLibraries() {
        for (String lib : getLibraries()) {
-          System.loadLibrary(lib);
+            String library = new File(getContext().getApplicationInfo().nativeLibraryDir, lib).toString();
+            System.load(library);
        }
     }
 
