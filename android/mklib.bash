@@ -32,7 +32,7 @@ while test -n "$1"; do
             CGO_CFLAGS="-I$ANDROID_TOOLCHAIN_ARM/include/SDL2" \
             CGO_LDFLAGS="-L$ANDROID_TOOLCHAIN_ARM/lib -L$ANDROID_TOOLCHAIN_ARM/sysroot/usr/lib" \
             GOOS=android GOARCH=arm GOARM=6 CGO_ENABLED=1 \
-            ${GOROOT}/bin/go build -v -x -buildmode=c-shared -ldflags="-s -w" -o=jni/src/armeabi/libvov.so github.com/gen2brain/vov/src
+            ${GOROOT}/bin/go build -v -x -buildmode=c-shared -ldflags="-s -w -extldflags=-Wl,-soname,libvov.so" -o=jni/src/armeabi/libvov.so github.com/gen2brain/vov/src
 
             shift
             ;;
@@ -54,7 +54,7 @@ while test -n "$1"; do
             CGO_CFLAGS="-I$ANDROID_TOOLCHAIN_ARM7/include/SDL2" \
             CGO_LDFLAGS="-L$ANDROID_TOOLCHAIN_ARM7/lib -L$ANDROID_TOOLCHAIN_ARM7/sysroot/usr/lib" \
             GOOS=android GOARCH=arm GOARM=7 CGO_ENABLED=1 \
-            ${GOROOT}/bin/go build -v -x -buildmode=c-shared -ldflags="-s -w" -o=jni/src/armeabi-v7a/libvov.so github.com/gen2brain/vov/src
+            ${GOROOT}/bin/go build -v -x -buildmode=c-shared -ldflags="-s -w -extldflags=-Wl,-soname,libvov.so" -o=jni/src/armeabi-v7a/libvov.so github.com/gen2brain/vov/src
 
             shift
             ;;
@@ -76,7 +76,7 @@ while test -n "$1"; do
             CGO_CFLAGS="-I$ANDROID_TOOLCHAIN_ARM64/include/SDL2" \
             CGO_LDFLAGS="-L$ANDROID_TOOLCHAIN_ARM64/lib -L$ANDROID_TOOLCHAIN_ARM64/sysroot/usr/lib" \
             GOOS=android GOARCH=arm64 CGO_ENABLED=1 \
-            ${GOROOT}/bin/go build -v -x -buildmode=c-shared -ldflags="-s -w" -o=jni/src/arm64-v8a/libvov.so github.com/gen2brain/vov/src
+            ${GOROOT}/bin/go build -v -x -buildmode=c-shared -ldflags="-s -w -extldflags=-Wl,-soname,libvov.so" -o=jni/src/arm64-v8a/libvov.so github.com/gen2brain/vov/src
 
             shift
             ;;
@@ -98,7 +98,7 @@ while test -n "$1"; do
             CGO_CFLAGS="-I$ANDROID_TOOLCHAIN_X86/include/SDL2" \
             CGO_LDFLAGS="-L$ANDROID_TOOLCHAIN_X86/lib -L$ANDROID_TOOLCHAIN_X86/sysroot/usr/lib" \
             GOOS=android GOARCH=386 CGO_ENABLED=1 \
-            ${GOROOT}/bin/go build -v -x -buildmode=c-shared -ldflags="-s -w" -o=jni/src/x86/libvov.so github.com/gen2brain/vov/src
+            ${GOROOT}/bin/go build -v -x -buildmode=c-shared -ldflags="-s -w -extldflags=-Wl,-soname,libvov.so" -o=jni/src/x86/libvov.so github.com/gen2brain/vov/src
 
             shift
             ;;
@@ -120,7 +120,7 @@ while test -n "$1"; do
             CGO_CFLAGS="-I$ANDROID_TOOLCHAIN_X86_64/include/SDL2" \
             CGO_LDFLAGS="-L$ANDROID_TOOLCHAIN_X86_64/lib -L$ANDROID_TOOLCHAIN_X86_64/sysroot/usr/lib" \
             GOOS=android GOARCH=amd64 CGO_ENABLED=1 \
-            ${GOROOT}/bin/go build -v -x -buildmode=c-shared -ldflags="-s -w" -o=jni/src/x86_64/libvov.so github.com/gen2brain/vov/src
+            ${GOROOT}/bin/go build -v -x -buildmode=c-shared -ldflags="-s -w -extldflags=-Wl,-soname,libvov.so" -o=jni/src/x86_64/libvov.so github.com/gen2brain/vov/src
 
             shift
             ;;
