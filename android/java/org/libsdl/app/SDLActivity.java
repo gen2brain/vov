@@ -18,7 +18,6 @@ import android.view.inputmethod.BaseInputConnection;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.AbsoluteLayout;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -507,8 +506,8 @@ public class SDLActivity extends Activity {
 
         @Override
         public void run() {
-            AbsoluteLayout.LayoutParams params = new AbsoluteLayout.LayoutParams(
-                    w, h + HEIGHT_PADDING, x, y);
+            RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+            params.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
 
             if (mTextEdit == null) {
                 mTextEdit = new DummyEdit(getContext());
